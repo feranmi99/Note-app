@@ -1,6 +1,8 @@
 let chatArr = []
-let localData = JSON.parse(localStorage.getItem("chat")) 
 
+if (localStorage.chat) {
+    chatArr = JSON.parse(localStorage.getItem("chat")) 
+}
 const add = ()=>{
     // alert("welcome")
     let item = {
@@ -10,22 +12,21 @@ const add = ()=>{
     // console.log(item);
     chatArr.push(item)
 
-    console.log(chatArr);
+    // console.log(chatArr);
 
     localStorage.setItem("chat",JSON.stringify(chatArr));
-    // console.log(localData);
-    // disp.innerHTML = "";
-    location.reload()
     
+    console.log(localData);
 
     title.value = "";
-    note.value = ""
+    note.value = "";
+    location.reload()
 }
 const displayChat = ()=>{
-    // disp.innerHTML = ""
-    localData.map((value , index)=> {
-        disp.innerHTML += `
-            <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+    let localData = JSON.parse(localStorage.getItem("chat")) 
+    disp.innerHTML += localData.map((value , index)=>{
+        return `
+        <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
                 <div class="h-full p-3 rounded-lg border-2 border-indigo-500 flex flex-col overflow-hidden">
                     <!-- <button class="bg-indigo-700 text-white px-3 py-1 tracking-widest text-l absolute right-0 top-0 rounded-bl">Delete Note</button> -->
                     <h2 class="text-lg font-normal tracking-widest ">${value.title}</h2>
@@ -42,6 +43,6 @@ const displayChat = ()=>{
                 </div>
             </div>
         `
-    })
+        
+    });
 }
-// displayChat();
