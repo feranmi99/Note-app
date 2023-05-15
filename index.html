@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <script src="./dashbord.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body onload="displayChat()">
-    <div class="header">Note App</div>
+    <div class="header">Note App <i class="fa-solid fa-user "></i></div>
     <input type="checkbox" class="opensideMenu" id="opensideMenu">
     <label for="opensideMenu" class="sidebarIconToggle">
         <div class="spinner diagonalpart-1"></div>
@@ -22,10 +24,10 @@
             <li>
                 Google <span>My Note App</span>
             </li>
-            <li><a href="#">Add-Note</a></li>
-            <li><a href="#">Add Contact </a></li>
-            <li><a href="#">Add-Todo</a></li>
-            <li><a href="#">Sign Out</a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-notes-medical pe-2 fa-bounce fa-2xl"></i> Add-Note</a></li>
+            <li><a href="#"><i class="fa-solid fa-address-book pe-2 fa-2xl"></i> Add Contact </a></li>
+            <li><a href="#"><i class="fa-solid fa-rectangle-list pe-2 fa-2xl"></i> Add-Todo</a></li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket pe-2 fa-2xl"></i> Sign Out</a></li>
         </ul>
     </div>
     <div id="center" class="main center">
