@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Bootstrap Ass/bootstrap.css">
+        <style>
+             #contain {
+                margin-top: 50px;
+                height: 70vh;
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: 1px 1px 20px 1px blue;
+                text-align: center;
+            }
+            #head {
+                text-align: center;
+                text-shadow: 3px 3px 2px blue;
+                color: lightblue;
+                margin-bottom: 30px;
+                margin-top: 10px;
+            }
+            #em, #ps {
+                margin-top: 20px;
+                height: 7vh;
+                border: 2px solid lightblue;
+            }
+            #signIn {
+                border: 2px solid blue;
+                margin-top: 30px;
+                background-color: blue;
+                color: lightblue;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            #signIn:hover {
+                background-color: transparent;
+                color: blue;
+            }
+            #forgot {
+                border: 2px solid blue;
+                border-top: 0px;
+                border-right: 0px;
+                margin-top: 20px;
+                color: blue;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            ::placeholder {
+                color: blue !important;
+                font-weight: bold;
+            }
+            #img {
+                border-radius: 100%;
+                max-width: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contain" class="col-lg-4 col-md-4 col-sm-6 mx-auto">
+            <img id="img" src="images/note image.jpg" alt="">
+            <h1 id="head">Sign In</h1>
+            <input type="text" placeholder="Enter email" id="em" class="form-control">
+            <input type="text" placeholder="Enter password" id="ps" class="form-control">
+            <button id="forgot" class="form-control" onclick="forgot()">Forgot Password</button>
+            <button id="signIn" class="form-control" onclick="signIn()">Sign In</button>
+        </div>
+        <script>
+            let noteUsers = JSON.parse(localStorage.getItem("ourCustomer"))
+            console.log(noteUsers);
+            const signIn = ()=>{
+                let customer = noteUsers.find((user) => em.value == user.email && ps.value == user.password)
+                console.log(customer)
+                if(customer != undefined){
+                    alert("You are welcome")
+                    window.location.href = "index.html"
+                }else {
+                    alert("User not find")
+                }
+            }
+        </script>
+    </body>
+</html>

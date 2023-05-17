@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Bootstrap Ass/bootstrap.css">
+        <style>
+            #contain {
+                margin-top: 50px;
+                height: 70vh;
+                border-radius: 20px;
+                padding: 20px;
+                box-shadow: 1px 1px 20px 1px blue;
+            }
+            #contain2 {
+                border-radius: 50px;
+                border-top-left-radius: 100%;
+                border-bottom-left-radius: 100%;
+                width: 29.6vw;
+                height: 70vh;
+                margin-top: -20px;
+                margin-left: 51px;
+                background-color: lightblue;
+            }
+            #head {
+                text-align: center;
+                text-shadow: 3px 3px 2px blue;
+                color: lightblue;
+                margin-bottom: 30px;
+            }
+            #fn, #ln, #em, #ps {
+                margin-top: 20px;
+                height: 7vh;
+                border: 2px solid lightblue;
+            }
+            #signUp {
+                border: 2px solid blue;
+                margin-top: 20px;
+                background-color: blue;
+                color: lightblue;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            #signUp:hover {
+                background-color: transparent;
+                color: blue;
+            }
+            ::placeholder {
+                color: blue !important;
+                font-weight: bold;
+            }
+            #head1 {
+                text-align: center;
+                margin-top: 20px;
+                margin-left: 70px;
+                text-shadow: 3px 3px 2px blue, -3px -3px 2px blue;
+                color: lightblue;
+            }
+            #img {
+                max-width: 90%;
+                height: 50vh;
+                border-radius: 50px;
+                border-top-left-radius: 70%;
+                border-bottom-left-radius: 100%;
+                margin-top: 30px;
+                margin-left: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="contain" class="col-lg-8 col-md-8 col-sm-11 mx-auto d-flex">
+            <div id="contain1" class="col-lg-6 col-md-6 col-sm-6 p-2">
+                <h1 id="head">Sign Up</h1>
+                <input type="text" placeholder="Enter firstname" id="fn" class="form-control">
+                <input type="text" placeholder="Enter lastname" id="ln" class="form-control">
+                <input type="text" placeholder="Enter email" id="em" class="form-control">
+                <input type="text" placeholder="Enter password" id="ps" class="form-control">
+                <button id="signUp" onclick="signUp()" class="form-control">Sign Up</button>
+            </div>
+            <div id="contain2" class="col-lg-6 col-md-6 col-sm-6 p-2">
+                <h2 id="head1">Note App</h2>
+                <img id="img" src="images/note image.jpg" alt="">
+            </div>
+        </div>
+        <script>
+            let noteUsers = []
+            if(localStorage.ourCustomer){
+                noteUsers = JSON.parse(localStorage.getItem("ourCustomer"))
+                console.log(noteUsers);
+            }
+            const signUp = ()=>{
+                let customer = {
+                    firsname: fn.value,
+                    lastname: ln.value,
+                    email: em.value,
+                    password: ps.value
+                }
+                noteUsers.push(customer)
+                fn.value = ""
+                ln.value = ""
+                em.value = ""
+                ps.value = ""
+                localStorage.setItem("ourCustomer",JSON.stringify(noteUsers))
+                window.location.href = "signIn.html"
+                console.log(noteUsers)
+            }
+        </script>
+    </body>
+</html>
